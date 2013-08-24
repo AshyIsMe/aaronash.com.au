@@ -39,13 +39,13 @@
 <body>
 	<!-- Markup -->
 
-	<div class="container">
+	<div class="container" style="padding-top: 15px;">
     <div class="row">
     <!--<div class="page-header">-->
         <div class="col-md-9">
             <h1>Aaron Ash</h1>
-            <p class="lead">Inspired by Matt Swanson's post <a href="http://mdswanson.com/blog/2013/08/11/write-things-tell-people.html">Do things, Tell People</a>
-                 , this is what I've been up to lately </p>
+            <p class="lead">Inspired by Matt Swanson's post <a href="http://mdswanson.com/blog/2013/08/11/write-things-tell-people.html">Do things, Tell People,</a>
+                  this is what I've been up to lately </p>
         </div>
         <div class="col-md-3 pull-right"> 
           <!--<img src="/images/aaron.jpg" class="img-responsive img-rounded pull-right" style="max-width: 30%;" />-->
@@ -87,16 +87,17 @@
             <ul class="nav">
               <li><h2>Posts</h2></li>
 	            <% for document in @getCollection('posts').toJSON(): %>
-	            	<li><span><%= document.date.toDateString() %>
-	            	&raquo;
-	            	<a href="<%= document.url %>"><%= document.title %></a></span></li>
+	            	<li><span><small><%= document.date.toDateString() %>
+	            	&raquo;</small>
+	            	<a href="<%= document.url %>"><strong><%= document.title %></strong></a></span></li>
 	            <% end %>
-              <li>&nbsp;</li>
-              <li><a href="https://github.com/AshyIsMe"><h3>Github</h3></a></li>
-              <li><a href="https://twitter.com/AaronAsh2"><h3>Twitter</h3></a></li>
-              <li><a href=""><h3>LinkedIn</h3></a></li>
-              <li><a href=""><h3>Facebook</h3></a></li>
+              <li><hr /></li>
+              <li><a href="https://github.com/AshyIsMe"><h3>Github <img class="pull-right" src="/images/github.gif"></h3></a></li>
+              <li><a href="https://twitter.com/AaronAsh2"><h3>Twitter <img class="pull-right" src="/images/twitter.gif"></h3></a></li>
+              <li><a href=""><h3>LinkedIn <img class="pull-right" src="/images/linkedin.png"></h3></a></li>
+              <li><a href=""><h3>Facebook<img class="pull-right" src="/images/facebook.gif"></h3></a></li>
               <li><a href=""><h3>Google+</h3></a></li>
+              <li><a href=""><h3>Gittip<img class="pull-right" src="/images/gittip.png"></h3></a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
