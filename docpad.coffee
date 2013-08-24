@@ -12,16 +12,16 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://aaronash.com.au"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
+        #'www.website.com',
+        #'website.herokuapp.com'
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Aaron Ash"
 
 			# The website description (for SEO)
 			description: """
@@ -41,8 +41,9 @@ docpadConfig = {
 
 			# Styles
 			styles: [
-				"/styles/twitter-bootstrap.css"
-				"/styles/style.css"
+        #"/styles/twitter-bootstrap.css"
+				"/styles/bootstrap.css"
+        #"/styles/offcanvas.css"
 			]
 
 			# Scripts
@@ -50,6 +51,7 @@ docpadConfig = {
 				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
 				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
 				"/scripts/script.js"
+        #"/scripts/offcanvas.js"
 			]
 
 
