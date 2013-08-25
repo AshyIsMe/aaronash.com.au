@@ -4,7 +4,7 @@ layout: post
 tags: ['watchlists','post']
 ```
 
-##What is watchlists?
+##[www.watchlists.com.au](http://www.watchlists.com.au)
 
 
    * News based share trading style
@@ -33,7 +33,7 @@ Eventually this will hopefully be my main tool for trading Aussie shares.  I'm g
 
 ##Show me the screenshots!
 
-![screenshot](/images/screenshot1.png)
+<img src="/images/screenshot1.png" class="img-responsive">
 
 So far the interface is pretty basic but it is functional for the basic use case.  I have a webscraping script that grabs the latest news from the ASX site and updates each user's watchlists as needed.
 

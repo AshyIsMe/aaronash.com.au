@@ -42,12 +42,12 @@
 	<div class="container" style="padding-top: 15px;">
     <div class="row">
     <!--<div class="page-header">-->
-        <div class="col-md-9">
+        <div class="col-md-8">
             <h1>Aaron Ash</h1>
             <p class="lead">Inspired by Matt Swanson's post <a href="http://mdswanson.com/blog/2013/08/11/write-things-tell-people.html">Do things, Tell People,</a>
                   this is what I've been up to lately </p>
         </div>
-        <div class="col-md-3 pull-right"> 
+        <div class="col-md-4 pull-right"> 
           <!--<img src="/images/aaron.jpg" class="img-responsive img-rounded pull-right" style="max-width: 30%;" />-->
           <img src="/images/aaron.jpg" class="img-responsive img-rounded pull-right" />
         </div>
@@ -94,10 +94,10 @@
               <li><hr /></li>
               <li><a href="https://github.com/AshyIsMe"><h3>Github <img class="pull-right" src="/images/github.gif"></h3></a></li>
               <li><a href="https://twitter.com/AaronAsh2"><h3>Twitter <img class="pull-right" src="/images/twitter.gif"></h3></a></li>
-              <li><a href=""><h3>LinkedIn <img class="pull-right" src="/images/linkedin.png"></h3></a></li>
-              <li><a href=""><h3>Facebook<img class="pull-right" src="/images/facebook.gif"></h3></a></li>
-              <li><a href=""><h3>Google+</h3></a></li>
-              <li><a href=""><h3>Gittip<img class="pull-right" src="/images/gittip.png"></h3></a></li>
+              <li><a href="http://www.linkedin.com/pub/aaron-ash/37/139/4a0"><h3>LinkedIn <img class="pull-right" src="/images/linkedin.png"></h3></a></li>
+              <li><a href="https://www.facebook.com/AshyRanga"><h3>Facebook<img class="pull-right" src="/images/facebook.gif"></h3></a></li>
+              <li><a href="https://plus.google.com/u/0/102481967620105818389/"><h3>Google+</h3></a></li>
+              <li><a href="https://www.gittip.com/AaronAsh/"><h3>Gittip<img class="pull-right" src="/images/gittip.png"></h3></a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -114,5 +114,17 @@
 
 	<!-- Scripts -->
 	<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43478914-1', 'aaronash.com.au');
+  ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>
