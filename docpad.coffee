@@ -34,10 +34,10 @@ docpadConfig = {
 				"""
 
 			# The website author's name
-			author: "Your Name"
+			author: "Aaron Ash"
 
 			# The website author's email
-			email: "your@email.com"
+			email: "aaron.ash+blog@gmail.com"
 
 			# Styles
 			styles: [
@@ -50,8 +50,9 @@ docpadConfig = {
 			scripts: [
 				"//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js",
 				"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js",
-				"/scripts/script.js"
+				"/scripts/script.js",
         #"/scripts/offcanvas.js"
+        "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
 			]
 
 

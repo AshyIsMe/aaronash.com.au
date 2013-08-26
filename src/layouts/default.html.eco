@@ -49,7 +49,7 @@
         </div>
         <div class="col-md-4 pull-right"> 
           <!--<img src="/images/aaron.jpg" class="img-responsive img-rounded pull-right" style="max-width: 30%;" />-->
-          <img src="/images/aaron.jpg" class="img-responsive img-rounded pull-right" />
+          <img src="/images/P1040223.jpg" class="img-responsive img-rounded pull-right" />
         </div>
     </div>
 
@@ -96,7 +96,7 @@
               <li><a href="https://twitter.com/AaronAsh2"><h3>Twitter <img class="pull-right" src="/images/twitter.gif"></h3></a></li>
               <li><a href="http://www.linkedin.com/pub/aaron-ash/37/139/4a0"><h3>LinkedIn <img class="pull-right" src="/images/linkedin.png"></h3></a></li>
               <li><a href="https://www.facebook.com/AshyRanga"><h3>Facebook<img class="pull-right" src="/images/facebook.gif"></h3></a></li>
-              <li><a href="https://plus.google.com/u/0/102481967620105818389/"><h3>Google+</h3></a></li>
+              <li><a href="https://plus.google.com/u/0/102481967620105818389/"><h3>Google+<img class="pull-right" src="/images/gplus-32.png"></h3></a></li>
               <li><a href="https://www.gittip.com/AaronAsh/"><h3>Gittip<img class="pull-right" src="/images/gittip.png"></h3></a></li>
             </ul>
           </div><!--/.well -->
