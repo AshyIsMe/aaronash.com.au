@@ -7,4 +7,4 @@ Simple and flexible HTML, CSS, and Javascript for popular user interface compone
 
 ## License
 
-	Copyright [Aaron Ash](http://aaronash.com.au). All rights reserved.
+Copyright [Aaron Ash](http://aaronash.com.au). All rights reserved.
