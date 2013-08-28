@@ -25,12 +25,12 @@ docpadConfig = {
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				Do things, Tell people.  This is what I've been working on in my spare time.
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				Aaron, Ash, blog, nodejs, watchlists, shares
 				"""
 
 			# The website author's name
