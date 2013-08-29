@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Cubism.js</title>
+<style>
+
+@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+@import url(http://square.github.io/cubism/style.css);
+
+#example1 { min-height: 155px; }
+#example2a { min-height: 153px; }
+#example2b { min-height: 255px; }
+
+</style>
+<div id="body">
+
+  <h1>Gargantuan</h1>
+
+  <h2>Time Series Visualization</h2>
+
+  <div id="example1"></div>
+
+  <p><aside>Mouseover or use the arrow keys to inspect values.<br><a href="./demo/" target="_blank">Open in a new window.</a></aside>
+
+
+
+  <!--<script src="http://square.github.io/cubism/d3.v2.js"></script>-->
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <script src="http://square.github.io/cubism/cubism.v1.js"></script>
+  <script src="http://square.github.io/cubism/highlight.min.js"></script>
+  <script>
+
+  var context = cubism.context()
+  .serverDelay(0)
+  .clientDelay(0)
+  .step(1e3)
+  .size(960);
+
+var memes = [];
+
+d3.json("medium.json", function(err, data) {
+  if(!err) {
+    console.log("AA DEBUG: finished loading json");
+    memes = data;
+    drawEverything();
+  } else {
+    console.log("AA DEBUG: error loading json" + err);
+  }
+
+  // On mousemove, reposition the chart values to match the rule.
+  context.on("focus", function(i) {
+    d3.selectAll(".value").style("right", i == null ? null : context.size() - i + "px");
+  });
+});
+
+function random(name) {
+  var value = 0,
+  values = [],
+  i = 0,
+  last;
+  return context.metric(function(start, stop, step, callback) {
+    start = +start, stop = +stop;
+    if (isNaN(last)) last = start;
+    while (last < stop) {
+      last += step;
+      value = Math.max(-10, Math.min(10, value + .8 * Math.random() - .4 + .2 * Math.cos(i += .2)));
+      values.push(value);
+    }
+    callback(null, values = values.slice((start - stop) / step));
+  }, name);
+}
+
+function randomSimple(name) {
+  var values = [];
+
+  return context.metric(function(start, stop, step, callback) {
+    start = +start;
+    stop = +stop;
+    console.log("start, stop, step: " + start + "," + stop + ", " + step);
+
+    /*
+    while(start < stop) {
+      start += step;
+      values.push(Math.random());
+    }
+   */
+      values.push(Math.random());
+
+    callback(null, values);
+  }, name);
+}
+
+function memedata(name) {
+  var values = []
+    i = memes.gargantuan.length - 1;
+
+    return context.metric(function(start, stop, step, callback) {
+
+      values.push(memes.gargantuan[i].data[0].data[name]);
+      console.log("AA DEBUG: i: " + i + "; " + JSON.stringify(memes.gargantuan[i].data[0].data));
+
+      --i;
+      if(i < 0) i = 0;
+
+      callback(null, values);
+    }, name);
+}
+
+function drawEverything() {
+
+  var foo = memedata("livememe.com"),
+  bar = memedata("imgur.com");
+
+  /*
+  var livememe = random("livememe"),
+  imgur = random("imgur");
+ */
+
+  d3.select("#example1").call(function(div) {
+
+    div.append("div")
+    .attr("class", "axis")
+    .call(context.axis().orient("top"));
+
+    div.selectAll(".horizon")
+    //.data([foo, bar, foo.add(bar), foo.subtract(bar)])
+    .data([foo, bar])
+    .enter().append("div")
+    .attr("class", "horizon")
+    .call(context.horizon().height(120).extent([-20, 20]));
+
+    div.append("div")
+    .attr("class", "rule")
+    .call(context.rule());
+
+  });
+
+}
+
+/*
+   d3.select("#example2a").call(function(div) {
+   div.datum(foo);
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(120)
+   .mode("mirror")
+   .colors(["#bdd7e7","#bae4b3"])
+   .title("Area (120px)")
+   .extent([-10, 10]));
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(30)
+   .mode("mirror")
+   .colors(["#bdd7e7","#bae4b3"])
+   .title("Area (30px)")
+   .extent([-10, 10]));
+   });
+
+   d3.select("#example2b").call(function(div) {
+   div.datum(foo);
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(120)
+   .colors(["#bdd7e7","#bae4b3"])
+   .title("Horizon, 1-band (120px)")
+   .extent([-10, 10]));
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(60)
+   .colors(["#6baed6","#bdd7e7","#bae4b3","#74c476"])
+   .title("Horizon, 2-band (60px)")
+   .extent([-10, 10]));
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(40)
+   .colors(["#3182bd","#6baed6","#bdd7e7","#bae4b3","#74c476","#31a354"])
+   .title("Horizon, 3-band (40px)")
+   .extent([-10, 10]));
+
+   div.append("div")
+   .attr("class", "horizon")
+   .call(context.horizon()
+   .height(30)
+   .colors(["#08519c","#3182bd","#6baed6","#bdd7e7","#bae4b3","#74c476","#31a354","#006d2c"])
+   .title("Horizon, 4-band (30px)")
+   .extent([-10, 10]));
+
+   });
+ */
+
+
+  </script>
+
