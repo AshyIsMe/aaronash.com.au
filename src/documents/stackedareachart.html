@@ -18,12 +18,26 @@ body {
   text-anchor: end;
 }
 
-.site text {
+.siteNew text {
   text-anchor: end;
 }
 
 </style>
 <body>
+
+<div id="new">
+  <h1>New</h1>
+</div>
+<div id="hot" />
+  <h1>Hot</h1>
+</div>
+<div id="controversial" />
+  <h1>Controversial</h1>
+</div>
+<div id="top" />
+  <h1>Top</h1>
+</div>
+
 <script src="http://d3js.org/d3.v3.js"></script>
 <script>
 
@@ -59,14 +73,55 @@ var area = d3.svg.area()
 var stack = d3.layout.stack()
     .values(function(d) { return d.values; });
 
-var svg = d3.select("body").append("svg")
+//var svg = d3.select("body").append("svg")
+var svgNew = d3.select("#new").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var svgHot = d3.select("#hot").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var svgControversial = d3.select("#controversial").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var svgTop = d3.select("#top").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 d3.json("short.json", function(error, data) {
-  color.domain(d3.keys(data.gargantuan[0].data[0].data));
+  drawChart(0, "siteNew", svgNew, data);
+  drawChart(1, "siteHot", svgHot, data);
+  drawChart(2, "siteControversial", svgControversial, data);
+  drawChart(3, "siteTop", svgTop, data);
+});
+
+//Lolo worst function parameters
+function drawChart(index, className, svg, data) {
+  var sitenames = d3.set();
+  data.gargantuan.forEach(function(d) {
+    //var adviceAnimalsNew = d.data[0];
+    var keys = d3.keys(d.data[index].data);
+    for(i = 0; i < keys.length; ++i)
+    {
+      if(!sitenames.has(keys[i]))
+        sitenames.add(keys[i]);
+    }
+    keys = null;
+  });
+  console.log(sitenames.values());
+  //color.domain(d3.keys(data.gargantuan[0].data[0].data));
+  color.domain(sitenames.values());
 
   data.gargantuan.forEach(function(d) {
     d.date = new Date(d.time * 1000);
@@ -76,17 +131,17 @@ d3.json("short.json", function(error, data) {
     return {
       name: name,
       values: data.gargantuan.map(function(d) {
-        return {date: d.date, y: d.data[0].data[name] / 25};
+        return {date: d.date, y: (d.data[index].data[name] / 25 || 0)};
       })
     };
   }));
 
   x.domain(d3.extent(data.gargantuan, function(d) { return d.date; }));
 
-  var site = svg.selectAll(".site")
+  var site = svg.selectAll("." + className)
       .data(sites)
       .enter().append("g")
-      .attr("class", "site");
+      .attr("class", className);
 
   site.append("path")
     .attr("class", "area")
@@ -110,7 +165,7 @@ d3.json("short.json", function(error, data) {
       .attr("class", "y axis")
       .call(yAxis);
 
-});
+};
 
 /*
 d3.tsv("data.tsv", function(error, data) {
