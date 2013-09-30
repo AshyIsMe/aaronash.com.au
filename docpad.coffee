@@ -43,6 +43,7 @@ docpadConfig = {
 			styles: [
         #"/styles/twitter-bootstrap.css"
 				"/styles/bootstrap.css"
+				"/styles/github.css"
         #"/styles/offcanvas.css"
 			]
 
@@ -97,16 +98,16 @@ docpadConfig = {
 	# =================================
 	# Plugins
 
-	plugins:
-		downloader:
-			downloads: [
-				{
-					name: 'Twitter Bootstrap'
-					path: 'src/files/vendor/twitter-bootstrap'
-					url: 'https://nodeload.github.com/twitter/bootstrap/tar.gz/master'
-					tarExtractClean: true
-				}
-			]
+	#plugins:
+		# downloader:
+		#   downloads: [
+		#     {
+		#       name: 'Twitter Bootstrap'
+		#       path: 'src/files/vendor/twitter-bootstrap'
+		#       url: 'https://nodeload.github.com/twitter/bootstrap/tar.gz/master'
+		#       tarExtractClean: true
+		#     }
+		#   ]
 
 
 	# =================================
