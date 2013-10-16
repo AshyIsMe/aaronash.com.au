@@ -14,7 +14,18 @@ title: 'Home'
       I'm always working on some small code project in my spare time but telling people about them has been a bit of a weakness.
       In the interest of improving that I'm starting this blog to keep track of what I've been up to.
     </p>
+
+
+  <h2>Recent Posts</h2>
+	<% for document in @getCollection('posts').toJSON(): %>
+		<li><h3><small><%= document.date.toDateString() %></small>
+		&raquo;
+		<a href="<%= document.url %>"><%= document.title %></h3></a></li>
+	<% end %>
+
+
   </div>
+
 
 <!--
   <div class="col-md-4">

@@ -68,7 +68,7 @@
     <nav class="navbar" role="navigation" style="height: 1px;">
         <ul class="nav navbar-nav">
 					<li typeof="sioc:Page" about="../">
-            <a href="../" property="dc:title">Home</a>
+            <a href="/" property="dc:title">Home</a>
 					</li>
 					<% for document in @getCollection('pages').toJSON(): %>
 						<li typeof="sioc:Page" about="<%= document.url %>" class="<%= 'active'  if @document.url is document.url %>">
