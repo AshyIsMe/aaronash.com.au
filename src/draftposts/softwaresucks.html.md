@@ -26,6 +26,8 @@ Why does the whole gui of OSX freeze every now and then when Time Machine spins 
 - Word - wtf is with not using mac hotkeys for simple things?
 - Outlook - Best of a bad bunch but still crashes often
 
+- Outlook - Open an excel attachment directly from an email. Make some changes. File -> Save As:
+          - "untitled.xls"  <- Why the fuck doesn't this default to the name of the existing document?  You then have to manually type the fucking name aorecugraectouhnsatodheusnth
 
 
 ## Spotify
