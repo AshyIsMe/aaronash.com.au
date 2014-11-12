@@ -28,6 +28,12 @@ Why does the whole gui of OSX freeze every now and then when Time Machine spins 
 
 - Outlook - Open an excel attachment directly from an email. Make some changes. File -> Save As:
           - "untitled.xls"  <- Why the fuck doesn't this default to the name of the existing document?  You then have to manually type the fucking name aorecugraectouhnsatodheusnth
+- Outlook - Can't open a *.msg file on mac.
+          - Seriously wtf: http://apple.stackexchange.com/questions/36508/opening-msg-file-in-outlook-for-mac-2011
+          - Oh yeap, email rules aren't safe either:
+<a href="/images/OutlookError.png">
+<img src="/images/OutlookError.png" class="img-responsive">
+</a>
 
 
 ## Spotify
