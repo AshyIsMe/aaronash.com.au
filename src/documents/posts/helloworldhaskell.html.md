@@ -1,10 +1,8 @@
 ```
-title: Hello World Haskell
+title: Hello World in Haskell: The easy way
 layout: post
 tags: ['Haskell', 'OSX', 'post']
 ```
-
-# Hello World in Haskell: The easy way
 
 ## New package management tool Stack
 Recently FPComplete released a new package management tool called [stack](https://github.com/commercialhaskell/stack).
@@ -54,7 +52,7 @@ Wrote project config to: /Users/aaron/CodeBases/hello-haskell/stack.yaml
 
 ```
 
-We make a new directory hello-haskell and then run `stack new` within it.  Stack creates a template project named after directory.
+We make a new directory hello-haskell and then run `stack new` within it.  Stack creates a template project named after the directory.
 ```bash
 $ ls -R
 LICENSE             Setup.hs            app                 hello-haskell.cabal src                 stack.yaml          test
@@ -105,12 +103,6 @@ import Lib
 
 main :: IO ()
 main = someFunc
-module Main where
-
-import Lib
-
-main :: IO ()
-main = someFunc
 
 ```
 
@@ -128,7 +120,7 @@ $ stack exec hello-haskell-exe
 hello world!
 ```
 
-If you want to add a library from the list of stackage packages all you need to do is add it to the `build-depends` section of the haskell-hello.cabal.
+If you want to add a library from the list of stackage packages all you need to do is add it to the `build-depends` section of the `haskell-hello.cabal` file.
 The list of available packages is here: https://www.stackage.org/lts-2.19
 ```
 ...
@@ -170,7 +162,7 @@ Ok, modules loaded: Lib.
 X86_64
 ```
 
-The ghci can be quite handy for quick testing cycles while you're working on a project.
+The ghci repl can be quite handy for quick testing cycles while you're working on a project.
 Let's add a simple function to the Main module and reload the code into the ghci repl without having to restart ghci:
 ```haskell
 module Main where
@@ -182,7 +174,7 @@ main :: IO ()
 main = do
   putStrLn "hello world!"
 
-  showSystemArch = "The cpu architecture is: " ++ (show getSystemArch)
+showSystemArch = "The cpu architecture is: " ++ (show getSystemArch)
 
 ```
 
@@ -207,3 +199,6 @@ Once you have the basics down [Ollie Charles'](https://ocharles.org.uk/blog/) bl
 
 - [24 Days of Hackage 2012](https://ocharles.org.uk/blog/pages/2012-12-01-24-days-of-hackage.html)
 - [24 Days of Hackage 2013](https://ocharles.org.uk/blog/pages/2013-12-01-24-days-of-hackage.html)
+
+
+
